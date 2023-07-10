@@ -16,6 +16,8 @@ spec:
      value: root
    - name: DBPWD
      value: pass123
+   - name: APP_COLOR
+     value: red
 
    ports:
    - containerPort: 8080
