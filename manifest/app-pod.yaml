@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webserver
+  labels:
+    app: employees
+    component: frontend
+spec:
+ containers:
+ - name: webserver
+   image: 280756408574.dkr.ecr.us-east-1.amazonaws.com/webapp:latest
+   env:
+   - name: DBHOST
+     value: mysql.k8sdb.svc.cluster.local  # Replace with the hostname of your MySQL service
+   - name: DBUSER
+     value: root
+   - name: DBPWD
+     value: pass123
+
+   ports:
+   - containerPort: 8080
